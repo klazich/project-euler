@@ -1,0 +1,26 @@
+{
+  "name": "project-euler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Kevin Lazich <dev@kevinlazich.com>",
+  "license": "MIT",
+  "bin": {
+    "euler": "bin/cli.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.2.3"
+  },
+  "scripts": {
+    "format": "prettier --write \"./**/*.{js,jsx,json,css,md}\"",
+    "euler": "babel-node bin/cli.js",
+    "start": "babel-node"
+  },
+  "dependencies": {
+    "colors": "^1.3.3",
+    "fs-extra": "^7.0.1",
+    "minimist": "^1.2.0"
+  }
+}
