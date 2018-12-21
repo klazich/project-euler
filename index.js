@@ -1,7 +1,3 @@
 import problems from './problems'
 
-function answerProblem(n) {
-  return problems.filter(({ problem }) => problem === n)
-}
-
-export default answerProblem
+export default n => problems.filter(({ problem }) => problem === n)
