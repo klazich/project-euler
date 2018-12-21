@@ -29,6 +29,14 @@ export function* numbersTo(start = 0, end = Infinity, step = 1) {
   for (let x of takeTo(end, iter)) yield x
 }
 
+export function* numbersFrom(start, end = 0, step = 1) {
+  const iter = numbers(start, step * -1)
+  for (let x of iter) {
+    if (x <= end) return
+    yield x
+  }
+}
+
 export function* makeFibonacci(end = Infinity) {
   let pr1 = 0
   let pr2 = 1
