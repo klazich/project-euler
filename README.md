@@ -9,3 +9,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 5. [Smallest multiple](problem/5)
 6. [Sum square difference](problem/6)
 7. [10001st prime](problem/7)
+8. [Largest product in a series](problem/8)
