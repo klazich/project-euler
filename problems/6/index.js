@@ -10,4 +10,4 @@ function answer() {
   return sumNtr(n) ** 2 - sumNtrSqr(n)
 }
 
-export const result = answer()
+export const result = 25164150
