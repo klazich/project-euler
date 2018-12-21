@@ -50,11 +50,11 @@ export function* filterNonDivisible(div, iterable) {
 export function* primes(start = 2, end = Infinity) {
   let iter = numbersTo(start, end)
   let count = start
-  while (count < end){
+  while (count < end) {
     count = iter.next().value
     if (!count) return
     yield count
-    if(count === 1) continue
+    if (count === 1) continue
     iter = filterNonDivisible(count, iter)
   }
 }
