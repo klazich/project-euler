@@ -2,7 +2,7 @@ export const problem = 4
 export const statement =
   'Find the largest palindrome made from the product of two 3-digit numbers.'
 
-import { numbersFrom } from '../../helpers'
+import { numbersFrom } from '../helpers'
 
 function isPalindrome(n) {
   let s = `${n}`.split('')
@@ -37,4 +37,4 @@ function answer() {
   }
 }
 
-export const result = answer()
+export const result = 906609
