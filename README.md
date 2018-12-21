@@ -8,3 +8,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 4. [Largest palindrome product](problem/4)
 5. [Smallest multiple](problem/5)
 6. [Sum square difference](problem/6)
+7. [10001st prime](problem/7)
