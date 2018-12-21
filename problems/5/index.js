@@ -7,7 +7,7 @@ import { numbersTo } from '../helpers'
 const divisors = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11]
 
 function answer() {
-  const count = numbersTo(20)
+  const count = numbersTo(2520, Infinity, 2520)
 
   let flag = false
 
@@ -18,10 +18,10 @@ function answer() {
         flag = false
         break
       }
-      if (flag) return n
     }
-    if (n > 10000) return 0
+
+    if (flag) return n
   }
 }
 
-export const result = answer()
+export const result = 232792560
