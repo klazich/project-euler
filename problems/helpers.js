@@ -55,14 +55,36 @@ export function* filterNonDivisible(div, iterable) {
   }
 }
 
+// export function* primes(start = 2, end = Infinity) {
+//   let iter = numbersTo(start, end)
+//   let count = start
+//   while (count < end) {
+//     count = iter.next().value
+//     if (!count) return
+//     yield count
+//     if (count === 1) continue
+//     iter = filterNonDivisible(count, iter)
+//   }
+// }
+
+export function isPrime(n) {
+  const sqrt = Math.sqrt(n)
+  for (let i = 2; i <= sqrt; i++) {
+    if (n % i === 0) return false
+  }
+  return n !== 1 && n !== 0
+}
+
 export function* primes(start = 2, end = Infinity) {
-  let iter = numbersTo(start, end)
-  let count = start
-  while (count < end) {
-    count = iter.next().value
-    if (!count) return
-    yield count
-    if (count === 1) continue
-    iter = filterNonDivisible(count, iter)
+  if (start < 3) {
+    yield 2
+    start = 3
+  }
+
+  let iter = numbersTo(start, end, 2)
+  let n = start
+  while (n < end) {
+    n = iter.next().value
+    if (isPrime(n)) yield n
   }
 }
