@@ -12,3 +12,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 8. [Largest product in a series](problem/8)
 9. [Special Pythagorean triplet](problem/9)
 10. [Summation of primes](problem/10)
+11. [Largest product in a grid](problem/11)
