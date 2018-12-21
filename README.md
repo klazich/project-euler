@@ -11,3 +11,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 7. [10001st prime](problem/7)
 8. [Largest product in a series](problem/8)
 9. [Special Pythagorean triplet](problem/9)
+10. [Summation of primes](problem/10)
