@@ -16,3 +16,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 12. [Highly divisible triangular number](problem/12)
 13. [Large sum](problem/13)
 14. [Longest Collatz sequence](problem/14)
+15. [Lattice paths](problem/15)
