@@ -9,6 +9,10 @@ import getProblem from '../'
 
 const args = minimist(process.argv.slice(2))
 
+function updateReadme(number) {
+  fs.appendFileSync(join(__dirname, 'README.md'), `${number}.`)
+}
+
 if (args._[0]) {
   const problemNumber = args._[0]
 
@@ -43,6 +47,7 @@ if (args.new) {
       fs.mkdirSync(newProblemDirectory)
       fs.writeFileSync(join(newProblemDirectory, 'index.js'), indexContents)
       fs.writeFileSync(join(newProblemDirectory, 'README.md'), readmeContents)
+      // updateReadme(newProblemNumber)
       console.log(colors.blue(`Problem ${newProblemNumber} directory created.`))
     } else {
       console.log(
