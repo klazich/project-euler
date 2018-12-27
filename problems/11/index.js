@@ -30,6 +30,23 @@ const grid = gridString
 
 const product = (a, b) => a * b
 
+function* countBiDirectionOf(size) {
+  let clamp = size * 2 - 1
+  for (let i = 0; i < clamp; i += 1) {
+    let hi = i
+    let lo = 0
+    let arr = []
+    while (hi >= 0) {
+      if (hi < size && lo < size) {
+        arr = [...arr, [lo, hi]]
+      }
+      hi -= 1
+      lo += 1
+    }
+    yield arr
+  }
+}
+
 const findGreatestProductOfAdjacent = adjacent => numbers => {
   let count = [0, adjacent]
   let greatest = 0
@@ -64,14 +81,62 @@ function udGridTransform(grid) {
   return transformedGrid
 }
 
-function dlrGridTransform(grid) {}
+function drlGridTransform(grid, min = 0) {
+  const len = grid.length
+  let transformedGrid = []
 
-function drlGridTransform(grid) {}
+  let iter = countBiDirectionOf(len)
 
-function answer() {
-  // console.log(findGreatestProductOfAdjacent(grid[0], 4))
-  // console.log(findGreatestOfGridWith(grid, findGreatestProductOfAdjacent(4)))
-  console.log(udGridTransform(grid))
+  for (let a of iter) {
+    let arr = []
+    for (let [i, j] of a) {
+      arr = [...arr, grid[i][j]]
+    }
+    if (arr.length >= min) {
+      transformedGrid = [...transformedGrid, arr]
+    }
+  }
+
+  return transformedGrid
 }
 
-export const result = answer()
+function dlrGridTransform(grid, min = 0) {
+  grid = grid.map(a => a.reverse())
+
+  const len = grid.length
+  let transformedGrid = []
+
+  let iter = countBiDirectionOf(len)
+
+  for (let a of iter) {
+    let arr = []
+    for (let [i, j] of a) {
+      arr = [...arr, grid[j][i]]
+    }
+    if (arr.length >= min) {
+      transformedGrid = [...transformedGrid, arr]
+    }
+  }
+
+  return transformedGrid
+}
+
+function answer() {
+  return Math.max(
+    findGreatestOfGridWith(grid, findGreatestProductOfAdjacent(4)),
+    findGreatestOfGridWith(
+      udGridTransform(grid),
+      findGreatestProductOfAdjacent(4)
+    ),
+    findGreatestOfGridWith(
+      drlGridTransform(grid, 4),
+      findGreatestProductOfAdjacent(4)
+    ),
+    findGreatestOfGridWith(
+      dlrGridTransform(grid, 4),
+      findGreatestProductOfAdjacent(4)
+    )
+  )
+}
+
+export const result = 70600674
