@@ -2,7 +2,7 @@ export const problem = 13
 export const statement =
   'Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.'
 
-const largeNumber = `37107287533902102798797998220837590246510135740250
+const numbers = `37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
 91942213363574161572522430563301811072406154908250
@@ -103,6 +103,21 @@ const largeNumber = `37107287533902102798797998220837590246510135740250
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690`
 
-function answer() {}
+function getNumbers(text) {
+  // console.log(text)
+  return text.split('\n').map(e => parseInt(e))
+}
 
-export const result = null
+const sum = (a, b) => a + b
+
+function answer() {
+  const arr = getNumbers(numbers)
+  console.log(arr)
+  return arr
+    .reduce(sum, 0)
+    .toString()
+    .slice(0, 11)
+    .replace('.', '')
+}
+
+export const result = 5537376230
