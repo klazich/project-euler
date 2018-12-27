@@ -34,9 +34,7 @@ if (args.new) {
 
   const indexContents = `export const problem = ${newProblemNumber}
   export const statement = ''
-  function answer() {
-
-  }
+  function answer() {}
   export const result = null`
 
   const readmeContents = `#\n

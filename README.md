@@ -17,3 +17,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 13. [Large sum](problem/13)
 14. [Longest Collatz sequence](problem/14)
 15. [Lattice paths](problem/15)
+16. [Power digit sum](problem/16)
