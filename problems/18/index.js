@@ -17,5 +17,16 @@ const triangle = `75
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23`
-function answer() {}
-export const result = null
+  .split('\n')
+  .map(row => row.split(' ').map(e => parseInt(e)))
+
+let compute = triangle.reduce((pre, cur) => {
+  let p = [0, ...pre, 0]
+  return cur.map((e, i) => Math.max(p[i], p[i + 1]) + e)
+})
+
+function answer() {
+  return Math.max(...compute)
+}
+
+export const result = 1074
