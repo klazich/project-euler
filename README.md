@@ -21,3 +21,4 @@ My solutions to [Project Euler](https://projecteuler.net/) problems with javascr
 17. [Number letter counts](problem/17)
 18. [Maximum path sum I](problem/18)
 19. [Counting Sundays](problem/19)
+20. [Factorial digit sum](problem/20)
