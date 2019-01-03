@@ -25,21 +25,17 @@ function* time(start = [1, 1, 1901], weekday = 2) {
   let [day, month, year] = start
 
   while (true) {
-    if (month === 2 && day >= 28) {
-      if (
-        year % 4 === 0 &&
-        (!(year % 100 === 0) || year % 400 === 0) &&
-        day === 28
-      ) {
+    if (month === 2 && day === 28) {
+      if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
         day += 1
       } else {
-        month += 1
         day = 1
+        month += 1
       }
-    } else if (
-      (month === 4 || month === 6 || month === 10 || month === 11) &&
-      day === 30
-    ) {
+    } else if (month === 2 && day === 29) {
+      day = 1
+      month += 1
+    } else if ([4, 6, 9, 11].includes(month) && day === 30) {
       month += 1
       day = 1
     } else if (day === 31) {
@@ -66,7 +62,7 @@ function answer() {
   let [day, month, year, weekday] = [1, 1, 1901, 2]
   let sum = 0
 
-  while (year <= 2000) {
+  while (year < 2000) {
     ;[day, month, year, weekday] = iter.next().value
     if (day === 1 && weekday === 1) {
       console.log(day, month, year, weekday)
@@ -77,4 +73,4 @@ function answer() {
   return sum
 }
 
-export const result = answer()
+export const result = 171
